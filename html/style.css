@@ -26,11 +26,12 @@ body, html {
 #main-container {
     width: 80%;
     max-width: 1200px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-opacity as requested */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     position: relative;
+    backdrop-filter: blur(5px); /* Adds a blur effect for better readability */
 }
 
 /* Common Elements */
@@ -104,10 +105,23 @@ body, html {
     margin-bottom: 30px;
 }
 
-.logo i {
-    font-size: 3rem;
+.injected-logo {
+    font-size: 3.5rem;
+    font-weight: bold;
     color: #ff9f1c;
     margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255, 159, 28, 0.7);
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #ff9f1c, #ff5722);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.injected-logo.small {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    margin-right: 15px;
 }
 
 .logo h1 {
@@ -165,6 +179,11 @@ body, html {
     padding: 10px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 20px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
 }
 
 .shop-header h1 {

@@ -9,14 +9,15 @@ local currentUser = nil
 function IsPlayerNearShop()
     local playerPed = PlayerPedId()
     local playerCoords = GetEntityCoords(playerPed)
-    local distance = #(playerCoords - Config.ShopLocation)
+    local shopCoords = vector3(Config.ShopLocation.x, Config.ShopLocation.y, Config.ShopLocation.z)
+    local distance = #(playerCoords - shopCoords)
     
     return distance <= Config.InteractionDistance
 end
 
 -- Function to create shop blip
 function CreateShopBlip()
-    local blip = AddBlipForCoord(Config.ShopLocation)
+    local blip = AddBlipForCoord(Config.ShopLocation.x, Config.ShopLocation.y, Config.ShopLocation.z)
     SetBlipSprite(blip, Config.ShopBlip.Sprite)
     SetBlipColour(blip, Config.ShopBlip.Color)
     SetBlipDisplay(blip, Config.ShopBlip.Display)
@@ -82,9 +83,15 @@ function CreateDeliveryPoint()
     
     SetBlipRoute(deliveryBlip, true)
     
+    -- Fix for weapon reference in currentDelivery
+    local weaponName = ""
+    if currentDelivery ~= nil and currentDelivery.weapon ~= nil then
+        weaponName = currentDelivery.weapon
+    end
+    
     currentDelivery = {
         coords = coords,
-        weapon = currentDelivery.weapon,
+        weapon = weaponName,
         timeout = GetGameTimer() + (Config.DeliveryTimeout * 1000)
     }
     

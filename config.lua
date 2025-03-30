@@ -1,19 +1,19 @@
 Config = {}
 
--- Shop location
-Config.ShopLocation = vector3(-1500.0, -200.0, 14.0) -- Default location, change to your preferred spot
+-- Shop location (using x, y, z format to prevent vector3 errors)
+Config.ShopLocation = { x = -1500.0, y = -200.0, z = 14.0 } -- Default location, change to your preferred spot
 Config.ShopBlip = {
     Sprite = 110,
     Color = 1,
     Display = 4,
     Scale = 0.8,
-    Name = "Weapons Import"
+    Name = "Weapons Market"
 }
 
 -- Interaction settings
 Config.InteractionDistance = 3.0
 Config.InteractionKey = 38 -- E key
-Config.InteractionText = "Press ~INPUT_CONTEXT~ to access the weapons import shop"
+Config.InteractionText = "Press ~INPUT_CONTEXT~ to access the weapons market"
 
 -- Delivery settings
 Config.DeliveryDistance = {min = 100.0, max = 300.0} -- Min and max distance for delivery point
