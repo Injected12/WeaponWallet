@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weapons Import Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Notification container -->
+        <div id="notifications-container"></div>
+        
+        <!-- Main container -->
+        <div id="main-container" class="hidden">
+            <!-- Login screen -->
+            <div id="login-screen" class="screen">
+                <div class="logo">
+                    <i class="fas fa-user-lock"></i>
+                    <h1>WEAPONS IMPORT</h1>
+                </div>
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter password">
+                    </div>
+                    <div class="form-actions">
+                        <button id="login-btn" class="btn btn-primary">Login</button>
+                        <button id="close-login-btn" class="btn btn-secondary">Close</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Shop screen -->
+            <div id="shop-screen" class="screen hidden">
+                <div class="shop-header">
+                    <h1>WEAPONS IMPORT</h1>
+                    <div class="user-info">
+                        <p>Welcome, <span id="user-name">Guest</span></p>
+                    </div>
+                </div>
+                <div class="shop-content">
+                    <div class="categories">
+                        <ul id="categories-list"></ul>
+                    </div>
+                    <div class="weapons">
+                        <div class="weapons-list-container">
+                            <ul id="weapons-list"></ul>
+                        </div>
+                    </div>
+                    <div class="weapon-details">
+                        <div id="weapon-details-content">
+                            <p class="select-prompt">Select a weapon to view details</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="shop-footer">
+                    <button id="logout-btn" class="btn btn-secondary">Logout</button>
+                    <button id="close-shop-btn" class="btn btn-secondary">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
